@@ -1,0 +1,19 @@
+package fundamentos;
+
+import java.math.BigInteger;
+
+public class FACULDADE_ATV8 {
+	public static void main(String[] args) {
+		int a = 120;
+		int b = 300;
+		
+		BigInteger produto = BigInteger.ONE;
+		for (int i = a; i <= b; i++) {
+			produto = produto.multiply(BigInteger.valueOf(i));
+		}
+		System.out.println("O produto dos números entre 120 e 300 é: " + produto);
+		
+		
+	}
+
+}

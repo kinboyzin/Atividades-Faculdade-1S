@@ -1,0 +1,30 @@
+package fundamentos;
+
+import javax.swing.JOptionPane;
+
+public class FACULDADE_ATV13 {
+	public static void main(String[] args) {
+		String strNum = JOptionPane.showInputDialog("Digite um número: ");
+		int num = Integer.parseInt(strNum);
+
+		if (num <= 1) {
+			System.out.println("O número " + num + " não é primo.");
+			return;
+		}
+
+		boolean isPrimo = true;
+
+		for (int i = 2; i <= Math.sqrt(num); i++) {
+			if (num % i == 0) {
+				isPrimo = false;
+				break;
+			}
+		}
+
+		if (isPrimo) {
+			System.out.println("O número " + num + " é primo.");
+		} else {
+			System.out.println("O número " + num + " não é primo.");
+		}
+	}
+}

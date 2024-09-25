@@ -1,0 +1,17 @@
+package salas;
+import javax.swing.JOptionPane;
+
+public class Sala301 {
+    public static void main(String[] args) {
+        String nome;
+        
+        while(true) {
+        	nome = JOptionPane.showInputDialog("Digite um nome, ou digite FIM para encerrar o programa: ");
+        	if(nome.equalsIgnoreCase("FIM")) {
+        		break;
+        	}
+        	System.out.println("Nome: " + nome);
+        	}
+        			
+        }
+}

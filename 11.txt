@@ -1,0 +1,68 @@
+package fundamentos;
+
+import javax.swing.JOptionPane;
+
+public class FACULDADE_ATV11 {
+	public static void main(String[] args) {
+		int codigo;
+		double consumoTotalRes = 0;
+		double consumoTotalCom = 0;
+		double consumoTotalInd = 0;
+		int contadorRes = 0;
+		int contadorCom = 0;
+
+		while (true) {
+
+			String strCodigo = JOptionPane.showInputDialog("Digite o código do consumidor (ou 0 para encerrar):");
+			codigo = Integer.parseInt(strCodigo);
+
+			if (codigo == 0) {
+				break;
+			}
+
+			String strConsumo = JOptionPane.showInputDialog("Digite a quantidade de kWh consumidos:");
+			double consumo = Double.parseDouble(strConsumo);
+
+			String strTipoConsumidor = JOptionPane
+					.showInputDialog("Digite o tipo do consumidor (1 - residencial, 2 - comercial, 3 - industrial):");
+			int tipo = Integer.parseInt(strTipoConsumidor);
+			if (tipo < 1 || tipo > 3) {
+				JOptionPane.showMessageDialog(null, "Tipo de consumidor inválido");
+				break;
+			}
+
+			double custo = 0;
+
+			switch (tipo) {
+			case 1:
+				custo = consumo * 0.3;
+				consumoTotalRes += consumo;
+				contadorRes++;
+				break;
+			case 2:
+				custo = consumo * 0.5;
+				consumoTotalCom += consumo;
+				contadorCom ++;
+				break;
+			case 3:
+				custo = consumo * 0.7;
+				consumoTotalInd += consumo;
+				break;
+
+			}
+
+			JOptionPane.showMessageDialog(null, "Código do consumidor: " + codigo + "\nCusto total: R$ " + custo);
+		}
+
+		double consumoTotal = consumoTotalRes + consumoTotalCom + consumoTotalInd;
+		System.out.println("Total de consumo Residencial: " + consumoTotalRes + " kWh");
+		System.out.println("Total de consumo Comercial: " + consumoTotalCom + " kWh");
+		System.out.println("Total de consumo Industrial: " + consumoTotalInd + " kWh");
+		System.out.println("Total de consumo geral: " + consumoTotal + " kWh");
+
+		double mediaRes = contadorRes > 0 ? consumoTotalRes / contadorRes : 0;
+		double mediaCom = contadorCom > 0 ? consumoTotalCom / contadorCom : 0;
+		System.out.println("Média de consumo Residencial: " + mediaRes + " kWh");
+		System.out.println("Média de consumo Comercial: " + mediaCom + " kWh");
+	}
+}

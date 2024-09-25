@@ -1,0 +1,39 @@
+package fundamentos;
+
+import javax.swing.JOptionPane;
+
+public class FACULDADE_ATV14 {
+	public static void main(String[] args) {
+
+		int contador = 0;
+
+		while (true) {
+			String strNum = JOptionPane.showInputDialog("Digite um número positivo: ");
+			int num = Integer.parseInt(strNum);
+
+			if (num < 0) {
+				break;
+			}
+
+			boolean isPrimo = true;
+
+			if (num <= 1) {
+				isPrimo = false;
+			} else {
+
+				for (int i = 2; i <= Math.sqrt(num); i++) {
+					if (num % i == 0) {
+						isPrimo = false;
+						break;
+					}
+				}
+			}
+
+			if (isPrimo) {
+				contador++;
+			}
+		}
+
+		System.out.println("A quantidade de números primos digitados foi: " + contador);
+	}
+}

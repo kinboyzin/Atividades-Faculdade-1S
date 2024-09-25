@@ -1,0 +1,21 @@
+package fundamentos;
+
+import javax.swing.JOptionPane;
+
+public class FACULDADE_6 {
+public static void main(String[] args) {
+	double num;
+	while(true) {
+	String strNum = JOptionPane.showInputDialog("Digite um número, ou digite -999 para parar o programa: ");
+	num = Double.parseDouble(strNum);
+	
+	if (num == -999) {
+		break;
+}
+	double raiz = Math.sqrt(num);
+	double inverso = num != 0 ? 1 / num : 0;
+	System.out.println("Número: "+ num + " " + "Raíz: " + raiz + " " + "Inverso: " + inverso);
+
+	}
+}
+}

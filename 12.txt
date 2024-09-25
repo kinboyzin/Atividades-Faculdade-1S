@@ -1,0 +1,26 @@
+package fundamentos;
+
+import javax.swing.JOptionPane;
+
+public class FACULDADE_ATV12 {
+public static void main(String[] args) {
+	
+	int menor21 = 0;
+	int maior50 = 0;
+
+	while (true) {
+	String strIdade = JOptionPane.showInputDialog("Digite uma idade: ");
+	int idade = Integer.parseInt(strIdade);
+	if (idade < 0 || idade > 120) {
+		break;
+	}
+	if (idade < 21) {
+		menor21++;
+	} else if (idade > 50) {
+		maior50++;
+	}
+	
+	}
+	System.out.println("Há" + " "+  menor21 + " " + "pessoa(s) com menos de 21 anos e" + " " + maior50 + " " + "pessoa(s) com mais de 50 anos.");
+}
+}

@@ -1,0 +1,30 @@
+package fundamentos;
+import javax.swing.JOptionPane;
+public class joao {
+	public static void main(String[] args) {
+        int contador = 0;
+        double soma = 0;
+        double numero;
+
+        while (true) {
+    
+            String strNum = JOptionPane.showInputDialog("Digite um número positivo (ou um número negativo para encerrar):");
+
+            numero = Double.parseDouble(strNum);
+
+            	if (numero < 0) {
+                break;
+            }
+
+            soma += numero;
+            contador++;
+        }
+
+        	if (contador > 0) {
+            double media = soma / contador;
+            System.out.println("A média dos números digitados é: " + media);
+        } else {
+            System.out.println("Nenhum número positivo foi digitado.");
+        }
+    }
+}
